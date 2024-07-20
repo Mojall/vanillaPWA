@@ -1,7 +1,10 @@
-import { FIREBASE_CONFIG } from './config';
+// Firebase libraries
+importScripts(
+    'https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js',
+    'https://www.gstatic.com/firebasejs/10.12.3/firebase-messaging-compat.js'
+);
 
-importScripts('https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/10.12.3/firebase-messaging-compat.js');
+// Configuration
 importScripts('./config.js')
 
 firebase.initializeApp(FIREBASE_CONFIG);
