@@ -131,7 +131,21 @@ export const FIREBASE_CONFIG = {
     appId: "YOUR_APP_ID"
 };
 ```
-## Шаг 4: Создание Service Worker (sw.js)
+
+## Шаг 4: Получение токенов с Firebase (FCM)
+1. Перейдите в консоль Firebase
+2. Создаём новый проект
+
+![Project](icons/readme/createProject.png)
+3. Перейдите в раздел "Cloud Messaging" и создайте новый ключ сервера
+
+![FCM](icons/readme/FCM.png)
+![FCMweb](icons/readme/FCMweb.png)
+![FCMconfig](icons/readme/FCMconfig.png)
+![VapidKey](icons/readme/vapidKey.png)
+4. Скопируйте VAPID ключ и конфигурацию Firebase в config.js:
+
+## Шаг 5: Создание Service Worker (sw.js)
 Создайте файл sw.js в корневом каталоге и добавьте следующий код:
 ```js
 importScripts('https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js');
@@ -214,9 +228,11 @@ self.addEventListener('push', event => {
 - Обработка push-уведомлений:
 При получении push-уведомления показываем его пользователю.
 
-## Шаг 5: Билд приложения через PWA Builder
+## Шаг 6: Билд приложения через PWA Builder
 1. Перейдите на сайт PWA Builder.
 2. Введите URL вашего сайта и нажмите "Start".
+
+![pwaAdress](icons/readme/pwaAdress.png) ![pwaBuild](icons/readme/pwaBuild.png)
 3. Следуйте инструкциям для создания PWA.
 4. Чтобы убрать адресную строку и загрузить приложение в Google Play, добавьте файл assetlinks.json в папку .well-known.
 
